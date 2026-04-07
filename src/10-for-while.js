@@ -1,6 +1,11 @@
 //for - while - do while
 
-//for 
+//for  cuando sabes cuantas veces repetir
+// while cuando no sabes cuantas veces se requiere repetir pero tiene la condicion
+// do while : se ejecuta almenos una vez
+// for of : para recorrer arrays y strings
+// for in : para recorrer propiedades de objetos
+
 // for (inicializacion,condicion,incremento) { }
 
 for (let i = 0; i < 5; i++) {
