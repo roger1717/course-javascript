@@ -22,7 +22,7 @@ console.log(typeof total);
 const texto = "hola mundo";
 console.log(texto.length)
 
-//slicer
+//slice    permite imprimir un sector especifico. 
 const texto1 = "Javascript es increible";
 console.log(texto1.slice(0,10));
 console.log(texto1.slice(11));
@@ -43,6 +43,7 @@ console.log(texto4.trim());   //quita espacios a ambos lados de la cadena
 console.log(texto4.trimStart());   //quita espacios al inicio
 console.log(texto4.trimend());   //quita espacios al final
 
+// lowercase  &  uppercase
 const texto5 = "javascript"
 console.log(texto5.toLowerCase);
 console.log(texto5.toUpperCase); 
@@ -56,6 +57,26 @@ const texto7 = "esto es un documento .md"
 console.log(texto7.startsWith('.md'))
 console.log(texto7.endsWith('.md'));
 
-//replace
+//replace        permite reemplazar una parte del texto
 const texto8 = "Hola mundo , esto es javascript"
 console.log(texto8.replace('Hola','hi'))
+
+//push           permite agregar datos a una constante
+const texto9 = ['Enero']
+texto9.push("Febrero");
+texto9.push("Marzo");
+console.log(texto9);
+
+// unshift    permite agregar al inicio de la cadena. 
+const texto10 = ['Enero'];
+texto10.unshift("Diciembre 2025");
+console.log(texto10);
+
+// .pop();    permite eliminar el ultimo    y .shift()  eliminar el primero
+const texto11 = ['Enero'];
+texto10.unshift("Diciembre 2025");
+console.log(texto11);
+
+// meses.splice(1, 0, "NuevoMes");  agrega o elimina en cualquier posición
+
+const texto12 = "Hola a todos esto es pruebas"
