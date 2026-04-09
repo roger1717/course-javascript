@@ -90,3 +90,54 @@ print(f"temperaturas elevadas : {sens_alerta}")
 print(f"temperaturas normales : {sens_norm}")
 print(f"promedio de temperaturas : {prom_t}")
 
+
+
+#  Listado de motores obtenido por el id , motores con aceite bajo
+#  En diccionarios se usa clave valor no posiciones como las listas [2]
+motores = [
+    {"id": "M1", "aceite": 85},
+    {"id": "M2", "aceite": 15},
+    {"id": "M3", "aceite": 50},
+    {"id": "M4", "aceite": 10}
+]
+
+def motores_analizados (lista_motores):
+    motores_bajos = []
+    
+    for motor in lista_motores:
+        if motor["aceite"] < 20:
+            motores_bajos.append(motor["id"])
+    return motores_bajos
+    
+niveles_bajos = motores_analizados(motores)
+print(f"Motores con aceite bajo : {niveles_bajos}")
+
+
+# control de aduanas , productos que costaron mas de 100 USD
+
+
+pedidos = [
+    {"producto": "Filtros Industriales", "precio": 150, "estado": "revisado"},
+    {"producto": "Sensores de Flujo", "precio": 80, "estado": "pendiente"},
+    {"producto": "Válvulas de Presión", "precio": 200, "estado": "revisado"},
+    {"producto": "Empaques de Neopreno", "precio": 30, "estado": "pendiente"},
+    {"producto": "Cojinetes de Acero", "precio": 120, "estado": "revisado"}
+]
+
+def gestionar_aduana (lista_pedidos):
+    productos_costosos = []
+    costo_total = 0
+    pendientes = 0 
+
+    for producto in lista_pedidos:
+        if producto("precio") >= 100:
+            productos_costosos.append(producto)
+        elif producto("precio") > 0:
+            total = round(sum(producto.values()))  
+        else:
+            print("no se encontraron productos para calcular costo") 
+
+        return productos_costosos,total
+    
+    productos_noaceptados = gestionar_aduana(pedidos)
+    print(f"productos que exeden lo permitido : {productos_noaceptados}")
