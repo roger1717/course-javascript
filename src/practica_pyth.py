@@ -129,15 +129,19 @@ def gestionar_aduana (lista_pedidos):
     costo_total = 0
     pendientes = 0 
 
-    for producto in lista_pedidos:
-        if producto("precio") >= 100:
-            productos_costosos.append(producto)
-        elif producto("precio") > 0:
-            total = round(sum(producto.values()))  
-        else:
-            print("no se encontraron productos para calcular costo") 
+    for item in lista_pedidos:
 
-        return productos_costosos,total
+        costo_total += item["precio"]
+
+        if item["precio"] >= 100:
+            productos_costosos.append(item["producto"])
     
-    productos_noaceptados = gestionar_aduana(pedidos)
-    print(f"productos que exeden lo permitido : {productos_noaceptados}")
+        if item ["estado"] == "pendiente":
+            pendientes +=1
+      
+    return productos_costosos,costo_total,pendientes
+    
+costosos,totales,cant_pendientes = gestionar_aduana(pedidos)
+print(f"productos que exeden lo permitido : {costosos}")
+print(f"valor total de carga : {totales}")
+print(f"pedidos por revisar : {cant_pendientes}")
