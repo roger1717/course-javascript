@@ -9,7 +9,7 @@ function crearcuentabancaria(saldoinicial) {
     return {
         depositar(cantidad) {
             saldo += cantidad;
-            return `depositado $${cantidad}, saldo actual: {saldo}`
+            return `depositado $${cantidad}, saldo actual: ${saldo}`
         },
         retirar(cantidad) {
             if (cantidad > saldo) {

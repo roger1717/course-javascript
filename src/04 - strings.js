@@ -74,7 +74,7 @@ console.log(texto10);
 
 // .pop();    permite eliminar el ultimo    y .shift()  eliminar el primero
 const texto11 = ['Enero'];
-texto10.unshift("Diciembre 2025");
+texto10.pop("Diciembre 2025");
 console.log(texto11);
 
 // meses.splice(1, 0, "NuevoMes");  agrega o elimina en cualquier posición
