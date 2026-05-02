@@ -145,3 +145,45 @@ costosos,totales,cant_pendientes = gestionar_aduana(pedidos)
 print(f"productos que exeden lo permitido : {costosos}")
 print(f"valor total de carga : {totales}")
 print(f"pedidos por revisar : {cant_pendientes}")
+
+
+
+
+
+
+
+colaboradores = [
+    {"nombre": "Yeferson", "horas": 45, "pago_hora": 20, "depto": "Sistemas"},
+    {"nombre": "Maria", "horas": 35, "pago_hora": 25, "depto": "Diseño"},
+    {"nombre": "Juan", "horas": 50, "pago_hora": 15, "depto": "Sistemas"},
+    {"nombre": "Ana", "horas": 40, "pago_hora": 30, "depto": "Marketing"}
+]
+
+def analizar_nomina(lista):
+    nomina_total = 0
+    equipo_sistemas = []
+
+    for persona in lista:
+        # 1. Calcular el pago bruto inicial
+        pago_bruto = persona["horas"] * persona["pago_hora"]
+
+        # 2. Verificar si trabajó más de 40 horas para el BONO
+        if persona["horas"] > 40:
+            pago_bruto = pago_bruto * 1.15
+            persona["Bono Aplicado"] = True
+        else:
+            persona["Bono Aplicado"] = False
+
+        if persona["depto"] == "Sistemas":
+            equipo_sistemas.append(persona["nombre"])
+
+        nomina_total += pago_bruto
+
+    return pago_bruto,nomina_total,lista
+    
+
+# Ejecución
+sistemas, total, reporte = analizar_nomina(colaboradores)
+
+print(f"Colaboradores de Sistemas: {sistemas}")
+print(f"Total a pagar en nómina: ${total}")
